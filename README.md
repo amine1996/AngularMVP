@@ -19,6 +19,8 @@ json-server --watch db.json
 ng serve
 ```
 
+Aller à l'adresse localhost:4200
+
 ### Fonctionnement du create :
 
 *   Création d'un component create qui sera affiché sur la route **create**
