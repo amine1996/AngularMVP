@@ -40,7 +40,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit() {
-    let url = this.activatedRoute.snapshot._routerState.url;
+    let url = this.activatedRoute.snapshot['_routerState'].url;
 
     if (url.indexOf("?") != -1)
       this.queryString = url.substr(url.indexOf("?"));
