@@ -43,7 +43,7 @@ export class ArticleSearchFormComponent implements OnInit {
     if (formValues.authors != "") {
       if (formValues.authorsQueryType == "contain")
         searchQuery['authors_like'] = formValues.authors;
-      else if (formValues.authorQueryType == "match")
+      else if (formValues.authorsQueryType == "match")
         searchQuery['authors'] = formValues.authors;
     }
 
