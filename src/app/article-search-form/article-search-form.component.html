@@ -1,0 +1,55 @@
+<div class="center-block col-10">
+  <h3>
+    Search an article
+  </h3>
+</div>
+<form [formGroup]="searchForm" (ngSubmit)="searchArticles()">
+  <div class="form-group">
+    <label class="center-block col-6">Title
+      <input placeholder="The title of the article you are looking for (Leave empty if not needed)" class="form-control transparent-input"
+        formControlName="title" />
+    </label>
+    <br />
+    <div class="btn-group">
+      <label class="btn btn-secondary">
+        <input type="radio" id="titleQueryMatch" name="titleQueryType" value="match" formControlName="titleQueryType" />Match
+      </label>
+      <label class="btn btn-secondary active">
+        <input type="radio" id="titleQueryContain" name="titleQueryType" value="contain" formControlName="titleQueryType" checked/>Contain
+      </label>
+    </div>
+    <br />
+    <label class="center-block col-6">Content
+      <textarea placeholder="Some content of the article you are looking for (Leave empty if not needed)" class="form-control  transparent-input"
+        formControlName="content"></textarea>
+    </label>
+    <br />
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-secondary">
+        <input type="radio" id="contentQueryMatch" name="contentQueryType" value="match" formControlName="contentQueryType" />Match
+      </label>
+      <label class="btn btn-secondary active">
+        <input type="radio" id="contentQueryContain" name="contentQueryType" value="contain" formControlName="contentQueryType" checked/>Contain
+      </label>
+    </div>
+    <br />
+    <label class="center-block col-6">Authors
+      <input placeholder="Name/Surname of the author you are looking for (Leave empty if not needed)" class="form-control  transparent-input"
+        formControlName="authors">
+    </label>
+    <br />
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-secondary ">
+        <input type="radio" id="authorsQueryMatch" name="authorsQueryType" value="match" formControlName="authorsQueryType" />Match
+      </label>
+      <label class="btn btn-secondary active">
+        <input type="radio" id="authorsQueryContain" name="authorsQueryType" value="contain" formControlName="authorsQueryType" checked
+        />Contain
+      </label>
+    </div>
+    <br />
+    <span class="center-block  col-6">
+      <button class="btn btn-success" [disabled]="searchForm.invalid" type="submit">Search</button>
+    </span>
+  </div>
+</form>

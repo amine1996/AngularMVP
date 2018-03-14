@@ -1,0 +1,15 @@
+<div class="jumbotron center-block" *ngIf=" ((this.articles()|async)?.length==0 ) ">
+    <h1>No articles found</h1>
+</div>
+<div *ngIf="((this.articles()|async)?.length> 0)">
+    <div *ngFor="let article of this.articles() | async">
+        <div *ngIf="!(article == this.articleModified)">
+            <app-article [article]="article" (deletedArticle)="deleteArticle($event)" (modifiedArticle)="modifyArticle($event)">
+            </app-article>
+        </div>
+        <div *ngIf="(article == this.articleModified)">
+            <app-article-modification [article]="article" (updatedArticle)="modifiedArticle($event)">
+            </app-article-modification>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <div class="center-block col-10">
+    <h2>Modify the article !</h2>
+  </div>
+  <form [formGroup]="articleForm" (ngSubmit)="modifyArticle()">
+    <div class="form-group">
+      <label class="center-block  col-12">Title
+        <input class="form-control transparent-input" formControlName="title">
+      </label>
+      <br />
+      <label class="center-block  col-12">Content
+        <textarea class="form-control transparent-input" formControlName="content"></textarea>
+      </label>
+      <br />
+      <label class="center-block  col-12">Authors
+        <input class="form-control transparent-input" formControlName="authors">
+      </label>
+      <br />
+      <span class="center-block col-10">
+        <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
+      </span>
+    </div>
+  </form>
+</div>

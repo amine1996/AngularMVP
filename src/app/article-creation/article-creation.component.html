@@ -1,0 +1,24 @@
+<div class="center-block col-10">
+  <h3>
+    Create your article
+  </h3>
+</div>
+<form [formGroup]="articleForm" (ngSubmit)="createArticle()">
+  <div class="form-group">
+    <label class="center-block col-12">Title
+      <input placeholder="Your title here" class="form-control transparent-input" formControlName="title">
+    </label>
+    <br />
+    <label class="center-block col-12">Content
+      <textarea placeholder="Your content here" class="form-control transparent-input" formControlName="content"></textarea>
+    </label>
+    <br />
+    <label class="center-block col-12">Authors
+      <input placeholder="Your name here" class="form-control transparent-input" formControlName="authors">
+    </label>
+    <br />
+    <span class="center-block  col-10">
+      <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Create</button>
+    </span>
+  </div>
+</form>

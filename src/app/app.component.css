@@ -1,0 +1,19 @@
+.jumbotron
+{
+    background-color: rgba(0,0,0,0.8)
+}
+
+.wallpaper
+{
+    background-image: url("http://downloadwallpaper.org/wp-content/uploads/2017/07/Sun-conjunct-fixed-star-Vertex-Andromeda-Galaxy-at-%C2%B0-Aries-orb-of-%C2%B0-Sunday-am-LA-wallpaper-wp34011111.jpg");
+    background-repeat: repeat-y;
+    height: 100%;
+    min-height:100vh;
+    color: white;
+}
+
+.transparent-input{
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+    outline:none;
+}
