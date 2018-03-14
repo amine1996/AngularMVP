@@ -2,11 +2,22 @@
 
 Projet utilisant Angular CLI version 1.7.0
 
+
 ## Auteurs
 
 Amine ISMAIL, Thierry GIRARD, Margaux DEBURE, Hussein Ait-Lahcen
 
 ## Explications
+
+### Installation et lancement : 
+
+```
+git clone https://github.com/amine1996/AngularMVP
+cd AngularMVP
+npm install
+json-server --watch db.json
+ng serve
+```
 
 ### Fonctionnement du create :
 
