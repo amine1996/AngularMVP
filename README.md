@@ -1,27 +1,42 @@
-# SimpleApp
+#Angular Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+Projet utilisant Angular CLI version 1.7.0
 
-## Development server
+## Auteurs
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Amine ISMAIL, Thierry GIRARD, Margaux DEBURE, Hussein Ait-Lahcen
 
-## Code scaffolding
+## Explications
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Fonctionnement du create :
 
-## Build
+*   Création d'un component create qui sera affiché sur la route **create**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+*   Une fois le formulaire rempli, lorsqu'on clique sur le bouton **Create**, à partir du **service articles** on va envoyer une requête **POST** qui contient un objet basé sur le RawArticle (qui est un article sans ID), l'ID est crée automatiquement
 
-## Running unit tests
+*   Une fois l'article crée, l'utilisateur est redirigé vers la route **articles**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Fonctionnement du delete
 
-## Running end-to-end tests
+*   Lorsqu'on clique sur le bouton delete sur l'article, un évenement **deletedObject** est émis vers le component **articles**, cet évenement contient un objet basé sur l'interface **Article**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+*   Une fois l'évenement intercepté par le component **articles**, alors on va récupérer l'ID est envoyé une requête **DELETE** à la base de donnée puis récupérer une liste d'article mise à jour
 
-## Further help
+### Fonctionnement de l'update :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+*   Création d'un component de modification d'article
+*   Lorsque l'on clique sur le bouton **"Modify"**, un évenement **modifiedArticle** est émis vers le componenent articles, cet évenement contient l'article que l'on souhaite modifier.
+
+*   Lorsque l'événement est intercepté par le component articles, on sauvegarde l'article à modifier dans une variable pour pouvoir le retrouver lorsque l'on affiche les articles
+
+*   Lorsque l'on affiche les articles dans le component articles, on va afficher le component de modification d'article à la place de l'article que l'on souhaite modifier.
+
+*   Pour modifier l'article dans la base de données, on utilise une requête **PUT** avec l'id de l'article et les nouvelles données.
+
+### Fonctionnement du search :
+
+*   Création d'un component search qui contient un formulaire et qui sera affiché sur la route **search**
+
+*   Possibilité de chercher en matchant exactement l'élement ou alors si l'élement contient la recherche (en utilisant les fonctionnalités de json-server)
+
+*   Une fois le formulaire rempli, on est redirigé vers la route **articles** avec des queryParams qui vont être utilisés en tant que filtre pour la query vers json-server.
